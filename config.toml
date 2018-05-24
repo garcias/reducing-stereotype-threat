@@ -1,0 +1,11 @@
+baseURL = "https://sites-garcias.c9users.io/"
+languageCode = "en-us"
+title = "Reducing Stereotype Threat Archive"
+theme = "hyde-hyde"
+toc = true
+sectionPagesMenu = "main"
+relativeURLs = true
+pluralizelisttitles = false
+[params]
+    themeColor = "theme-base-0d"
+    layoutReverse = false
