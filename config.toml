@@ -6,6 +6,7 @@ toc = true
 sectionPagesMenu = "main"
 relativeURLs = true
 pluralizelisttitles = false
+publishDir = "docs"
 [params]
     themeColor = "theme-base-0d"
     layoutReverse = false
