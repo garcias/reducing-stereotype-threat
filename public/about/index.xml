@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Reducing Stereotype Threat Archive</title>
+    <link>https://sites-garcias.c9users.io/about/</link>
+    <description>Recent content in About on Reducing Stereotype Threat Archive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 May 2018 17:06:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://sites-garcias.c9users.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>History</title>
+      <link>https://sites-garcias.c9users.io/about/history/</link>
+      <pubDate>Thu, 24 May 2018 17:06:05 +0000</pubDate>
+      
+      <guid>https://sites-garcias.c9users.io/about/history/</guid>
+      <description>Before 2017 For years Catherine Good (Baruch College) and Steve Stroessner (Barnard College) maintained www.reducingstereotypethreat.org. It consisted of an annotated bibliography of research on stereotype threat, along with discussions of various aspects of stereotype threat (e.g. vulnerable groups, situations, mechanisms, &amp;hellip;). This made it an indispensable resource for learning about stereotype threat and then teaching it to others. When training teaching assistants, I would send them to the site to explore specific questions.</description>
+    </item>
+    
+    <item>
+      <title>Legacy (before 2017)</title>
+      <link>https://sites-garcias.c9users.io/about/legacy/</link>
+      <pubDate>Thu, 24 May 2018 15:04:16 +0000</pubDate>
+      
+      <guid>https://sites-garcias.c9users.io/about/legacy/</guid>
+      <description>The original Reducingstereotypethreat.org had the following description and acknowledgments.
+About Reducing Stereotype Threat Reducingstereotypethreat.org was created by two social psychologists as a resource for faculty, teachers, students, and the general public interested in the phenomenon of stereotype threat. This website offers summaries of research on stereotype threat and discusses unresolved issues and controversies in the research literature. Included are some research-based suggestions for reducing the negative consequences of stereotyping, particularly in academic settings.</description>
+    </item>
+    
+  </channel>
+</rss>
