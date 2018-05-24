@@ -13,3 +13,5 @@ Welcome to the RST Archive! This site presents articles and annotated bibliograp
 The design of this site is intended to be fast, responsive, and minimally distracting, so that you can use it as a resource for self study or for training and workshops. Enjoy!
 
 See the [About](about) section if you're curious about the [history](about/history) of this project, or how the [information was recovered](https://github.com/garcias/rst-archive).
+
+Ready to learn about stereotype threat? Start with [the definition](topics/definition/)!
