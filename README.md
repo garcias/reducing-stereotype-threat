@@ -14,11 +14,16 @@ Design based on the Hyde-Hyde theme at [https://github.com/htr3n/hyde-hyde](http
 
 ## How to use the source
 
-The recovered data are in `data/bibliography.json` and `data/topics.json`. Run the script `gen.py` to generate the corresponding Hugo markdown files in `content/`. To build, remove `docs/` and run `hugo` to regenerate static files; then push to GitHub, which is set to serve from `docs/`.
+When setting up for the first time, make sure to clone or submodule the Hyde-Hyde repository to `themes/`.
+
+The recovered data are in `data/bibliography.json` and `data/topics.json`. Run the script `gen.py` to generate the corresponding Hugo markdown files in `content/`. To build, remove `docs/` and run `hugo` to regenerate static files; then push to GitHub, which is set to serve from `docs/`. So typical workflow looks like:
 
 ```bash
-    python gen.py
-    rm -rf docs/
+    python gen.py  # if any changes to content
+    # any other changes to content or styling
+    # add and commit source changes
+    rm -rf docs/   
     hugo
+    # add and commit build changes
     git push origin master
 ```
