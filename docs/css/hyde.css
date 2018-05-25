@@ -263,7 +263,8 @@ a.sidebar-nav-item:focus {
 }
 .theme-base-0d .content a,
 .theme-base-0d .related-posts li a:hover {
-  color: #6a9fb5;
+  color: #488ca9;
+  font-weight: 400;
 }
 
 /* Magenta */
