@@ -17,22 +17,45 @@ def write_page( filename, content, **metadata):
         f.write( front_matter )
         f.write( content )
 
-source_template = Template("""\
+source_template = Template("""
 ### ${title}
 
 ${annotation}
 """)
 
+review_template = Template("""
+### ${title}
+
+${text}
+""")
+
 with open( 'data/sources.json', 'r' ) as f:
     sources = json.loads( f.read() )
 
+with open( 'data/reviews.json', 'r' ) as f:
+    reviews = json.loads( f.read() )
+
 for source in sources[0:2]:
     filename = f"sources/{source['href']}.md"
-    title = source['title']
-    annotation = source['annotation']
-    content = source_template.substitute( title=title, annotation=annotation )
-    front_matter = { 'title': title, 'layout': "default", 'parent': "Sources", 'has_children': "false" }
+    front_matter = { 
+        'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false", 
+    }
+    # title = source['title']
+    # annotation = source['annotation']
+    content = source_template.substitute( **source )
     write_page( filename, content, **front_matter )
+
+for review in reviews[0:2]:
+    filename = f"reviews/{review['href']}.md"
+    front_matter = {
+        'title': review['question'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
+    }
+    content = review['text'] + "\n"
+    for subtopic in review['subtopics']:
+        content += review_template.substitute( **subtopic )
+    write_page( filename, content, **front_matter )
+
+
 
 # @dataclass
 # class JekyllPage:
