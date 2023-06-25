@@ -1,11 +1,7 @@
 ---
 title: "Legacy (before 2017)"
-date: 2018-05-24T15:04:16Z
-tags: []
-draft: false
-description: ""
-toc: true
-weight: 0
+layout: default
+parent: About
 ---
 
 The original `Reducingstereotypethreat.org` had the following description and acknowledgments.

@@ -1,11 +1,7 @@
 ---
 title: "History"
-date: 2018-05-24T17:06:05Z
-tags: []
-draft: false
-description: ""
-toc: true
-weight: 0
+layout: default
+parent: About
 ---
 
 # Before 2017
