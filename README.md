@@ -6,24 +6,29 @@ This web site is intended as a study tool to learn more about the phenomenon of 
 
 Want the back story? Read [content/about/history.md](content/about/history/md).
 
-Want the original RST website (2018 and later)? It is back online at [www.reducingstereotypethreat.org](http://www.reducingstereotypethreat.org)! It can be a bit slow, is served over HTTP, and visually dense; if those are problems for you and you don't need the latest articles, [this archive](https://garcias.github.io/reducing-stereotype-threat) should be good enough. 
-
 Wondering how the data were recovered? [See this GitHub repo for the story and the code.](https://github.com/garcias/rst-archive)
 
-Design based on the Hyde-Hyde theme at [https://github.com/htr3n/hyde-hyde](https://github.com/htr3n/hyde-hyde). Add it to `/themes` using `git submodule add https://github.com/htr3n/hyde-hyde`.
+Design based on theme [Just-The-Docs theme](https://github.com/just-the-docs/just-the-docs).
 
 ## How to use the source
 
 When setting up for the first time, make sure to clone or submodule the Hyde-Hyde repository to `themes/`.
 
-The recovered data are in `data/bibliography.json` and `data/topics.json`. Run the script `gen.py` to generate the corresponding Hugo markdown files in `content/`. To build, remove `docs/` and run `hugo` to regenerate static files; then push to GitHub, which is set to serve from `docs/`. So typical workflow looks like:
+The recovered data are in `data/bibliography.json` and `data/topics.json`. Run the scripts `convert.py` to generate `data/sources.json` and `data/reviews.json`; and `generate.py` to generate the corresponding markdown files in `sources/` and `reviews/`.
+
+To build in a Jekyll devcontainer, create the following `Gemfile`:
+
+```ruby
+source "https://rubygems.org"
+gem "jekyll-github-metadata", ">= 2.15"
+gem "webrick", "~> 1.7"
+gem "just-the-docs"
+```
+
+Then install with:
 
 ```bash
-    python gen.py  # if any changes to content
-    # any other changes to content or styling
-    # add and commit source changes
-    rm -rf docs/   
-    hugo
-    # add and commit build changes
-    git push origin master
+gem install bundler jekyll
+bundle update
+bundle exec jekyll serve
 ```
