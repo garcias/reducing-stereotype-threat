@@ -18,13 +18,15 @@ def write_page( filename, content, **metadata):
         f.write( content )
 
 source_template = Template("""
-### ${title}
+# ${title}
+
+### ${citation}
 
 ${annotation}
 """)
 
 review_template = Template("""
-### ${title}
+## ${title}
 
 ${text}
 """)
@@ -37,20 +39,24 @@ with open( 'data/reviews.json', 'r' ) as f:
 
 for source in sources[0:2]:
     filename = f"sources/{source['href']}.md"
-    front_matter = { 
-        'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false", 
-    }
-    # title = source['title']
-    # annotation = source['annotation']
-    content = source_template.substitute( **source )
-    write_page( filename, content, **front_matter )
+    try:
+        front_matter = { 
+            'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false", 
+        }
+        # title = source['title']
+        # annotation = source['annotation']
+        content = source_template.substitute( **source )
+        write_page( filename, content, **front_matter )
+    except KeyError:
+        pass
 
 for review in reviews[0:2]:
     filename = f"reviews/{review['href']}.md"
     front_matter = {
         'title': review['question'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
     }
-    content = review['text'] + "\n"
+    content = f"# {review['title']}\n\n"
+    content += review['text'] + "\n"
     for subtopic in review['subtopics']:
         content += review_template.substitute( **subtopic )
     write_page( filename, content, **front_matter )
