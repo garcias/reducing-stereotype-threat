@@ -10,9 +10,9 @@ def reformat_links( text ):
     # changes any md links in text to match typical jekyll config
 
     # replace "](link)" with "](/reviews/link)" as long as link doesn't begin with "bibliography"
-    text = re.sub( r'\]\(((?!bibliography).*?)\)', r"](../reviews/\1)", text)
+    text = re.sub( r'\]\(((?!bibliography).*?)\)', r"](../../reviews/\1)", text)
     # replace "bibliography_" with "/sources/"
-    text = re.sub( r'(bibliography)_', r"../sources/", text)
+    text = re.sub( r'(bibliography)_', r"../../sources/", text)
     # replace ".html" with "/"
     text = re.sub( r'\.html', r"/", text )
 
