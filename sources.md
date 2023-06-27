@@ -2,6 +2,7 @@
 title: Sources
 layout: default
 has_children: true
+nav_order: 3
 ---
 # Sources
 

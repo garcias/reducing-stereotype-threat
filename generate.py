@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from string import Template
 import json
 
@@ -8,6 +7,7 @@ title: ${title}
 parent: ${parent}
 layout: ${layout}
 has_children: ${has_children}
+nav_order: ${nav_order}
 ---
 """)
 
@@ -25,58 +25,58 @@ source_template = Template("""
 ${annotation}
 """)
 
-review_template = Template("""
-## ${title}
-
-${text}
-""")
-
 with open( 'data/sources.json', 'r' ) as f:
     sources = json.loads( f.read() )
 
 with open( 'data/reviews.json', 'r' ) as f:
     reviews = json.loads( f.read() )
 
-for source in sources[0:2]:
+for source in sources:
     filename = f"sources/{source['href']}.md"
     try:
         front_matter = { 
-            'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false", 
+            'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false",
+            'nav_order': "",
         }
-        # title = source['title']
-        # annotation = source['annotation']
         content = source_template.substitute( **source )
         write_page( filename, content, **front_matter )
     except KeyError:
         pass
 
-for review in reviews[0:2]:
+
+review_template = Template("""
+# ${question}
+{: .no_toc }
+
+${text}
+
+#### Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
+""")
+
+subtopic_template = Template("""
+## ${title}
+
+${text}
+""")
+
+# Use this to determine the correct nav_order for each review page
+review_order = {
+    'definition': 1, 'vulnerable': 2, 'situations': 3, 'consequences': 4, 
+    'mechanisms': 5, 'reduce': 6, 'criticisms': 7, 'unresolved': 8
+}
+
+for review in reviews:
     filename = f"reviews/{review['href']}.md"
     front_matter = {
-        'title': review['question'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
+        'title': review['href'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
+        'nav_order': review_order[ review['href'] ],
     }
-    content = f"# {review['question']}\n\n"
-    content += review['text'] + "\n"
+    content = review_template.substitute( **review )
     for subtopic in review['subtopics']:
-        content += review_template.substitute( **subtopic )
+        content += subtopic_template.substitute( **subtopic )
     write_page( filename, content, **front_matter )
-
-
-
-# @dataclass
-# class JekyllPage:
-#     filename: str
-#     title: str
-#     parent: str = ""
-#     layout: str = "default"
-#     has_children: str = "false"
-
-#     def write_page( self ):
-#         front_matter = page_template.substitute(
-#             title = self.title, parent = self.parent, 
-#             layout = self.layout, has_children = self.has_children
-#         )
-#         print( front_matter )
-
-# jp = JekyllPage("hello.md", "Hello!")
-# jp.write_page()
