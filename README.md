@@ -4,11 +4,11 @@ This web site is intended as a study tool to learn more about the phenomenon of 
 
 [Try out the archive.](https://garcias.github.io/reducing-stereotype-threat)
 
-Want the back story? Read [content/about/history.md](content/about/history/md).
+Want the back story? Read [content/about/history.md](about/history/md).
 
 Wondering how the data were recovered? [See this GitHub repo for the story and the code.](https://github.com/garcias/rst-archive)
 
-Design based on theme [Just-The-Docs theme](https://github.com/just-the-docs/just-the-docs).
+Design based on theme [Just-The-Docs](https://github.com/just-the-docs/just-the-docs).
 
 ## How to use the source
 
