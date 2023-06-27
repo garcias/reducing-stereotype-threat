@@ -14,3 +14,5 @@ The design of this site is intended to be fast, responsive, and minimally distra
 See [About](/about/) if you're curious about the [history](/about/history/) of this project, or how the [information was recovered](https://github.com/garcias/rst-archive).
 
 Ready to learn about stereotype threat? Start with [the definition](/reviews/definition/)!
+
+If you are looking for a specific review, source, or topic; try the search bar above.
