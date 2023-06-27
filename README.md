@@ -12,8 +12,6 @@ Design based on theme [Just-The-Docs](https://github.com/just-the-docs/just-the-
 
 ## How to use the source
 
-When setting up for the first time, make sure to clone or submodule the Hyde-Hyde repository to `themes/`.
-
 The recovered data are in `data/bibliography.json` and `data/topics.json`. Run the scripts `convert.py` to generate `data/sources.json` and `data/reviews.json`; and `generate.py` to generate the corresponding markdown files in `sources/` and `reviews/`.
 
 To build in a Jekyll devcontainer, create the following `Gemfile`:
