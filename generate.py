@@ -55,7 +55,7 @@ for review in reviews[0:2]:
     front_matter = {
         'title': review['question'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
     }
-    content = f"# {review['title']}\n\n"
+    content = f"# {review['question']}\n\n"
     content += review['text'] + "\n"
     for subtopic in review['subtopics']:
         content += review_template.substitute( **subtopic )
