@@ -4,6 +4,7 @@ parent: Sources
 layout: default
 has_children: false
 nav_order: 
+nav_exclude: true
 ---
 
 # Major, Spencer, Schmader, Wolfe, & Crocker, 1998

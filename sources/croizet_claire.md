@@ -4,6 +4,7 @@ parent: Sources
 layout: default
 has_children: false
 nav_order: 
+nav_exclude: true
 ---
 
 # Croizet & Claire, 1998

@@ -8,6 +8,7 @@ parent: ${parent}
 layout: ${layout}
 has_children: ${has_children}
 nav_order: ${nav_order}
+nav_exclude: ${nav_exclude}
 ---
 """)
 
@@ -36,7 +37,7 @@ for source in sources:
     try:
         front_matter = { 
             'title': source['title'], 'layout': "default", 'parent': "Sources", 'has_children': "false",
-            'nav_order': "",
+            'nav_order': "", 'nav_exclude': "true",
         }
         content = source_template.substitute( **source )
         write_page( filename, content, **front_matter )
@@ -74,7 +75,7 @@ for review in reviews:
     filename = f"reviews/{review['href']}.md"
     front_matter = {
         'title': review['href'], 'layout': "default", 'parent': "Reviews", 'has_children': "false",
-        'nav_order': review_order[ review['href'] ],
+        'nav_order': review_order[ review['href'] ], 'nav_exclude': "false",
     }
     content = review_template.substitute( **review )
     for subtopic in review['subtopics']:

@@ -4,6 +4,7 @@ parent: Sources
 layout: default
 has_children: false
 nav_order: 
+nav_exclude: true
 ---
 
 # McKay, Doverspike, Bowen-Hilton, & McKay, 2003
